@@ -12,7 +12,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ getTodoHandler }) => {
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     getTodoHandler(text);
-    setText(text);
+    setText('');
   };
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,13 +23,11 @@ const TodoForm: React.FC<TodoFormProps> = ({ getTodoHandler }) => {
     <form className={style.container} onSubmit={onSubmitHandler}>
       <input
         type="text"
-        // value={text}
+        value={text}
         className={style.input}
         onChange={onChangeHandler}
       />
-      <Button title="" disabled={false}>
-        Submit
-      </Button>
+      <Button title="Submit">Submit</Button>
     </form>
   );
 };

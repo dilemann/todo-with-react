@@ -1,6 +1,6 @@
 .container {
 
-    width: 400px;
+    width: 300px;
     padding: 5px 12px;
     border-radius: 3px;
     cursor: pointer;
@@ -8,7 +8,7 @@
     margin: 20px auto;
     color: black;
     text-align: start;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 300;
     display: flex;
     align-items: center;
@@ -23,9 +23,10 @@
 
 }
 
-.listForm.completedTodo .icon,
-.listForm.completedTodo .deleteIcon,
-.listForm.completedTodo .acceptIcon {
+.container.completedTodo .todoIcon,
+.container.completedTodo .deleteIcon,
+.container.completedTodo .acceptIcon,
+.container.completedTodo .text {
     color: gray;
 }
 

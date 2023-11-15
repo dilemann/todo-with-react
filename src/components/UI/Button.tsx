@@ -1,24 +1,30 @@
+import React from 'react';
 import style from './Button.module.css';
 
 interface ButtonProps {
-  title: string;
-  disabled: boolean;
-  children: string;
+  title?: string;
+  disabled?: boolean;
+  children: React.ReactNode;
+  onClick?: () => void;
 }
 
-const Button = (props: ButtonProps) => {
-  const { title, disabled = false, children } = props;
+const Button: React.FC<ButtonProps> = ({
+  title,
+  disabled = false,
+  children,
+  onClick,
+  ...rest
+}) => {
   return (
-    <>
-      <button
-        {...props}
-        className={style.button}
-        title={title}
-        disabled={disabled}
-      >
-        {children}
-      </button>
-    </>
+    <button
+      className={style.button}
+      title={title}
+      disabled={disabled}
+      onClick={onClick}
+      {...rest}
+    >
+      {children}
+    </button>
   );
 };
 
