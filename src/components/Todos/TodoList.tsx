@@ -5,13 +5,14 @@ import { TodoItem } from '../../App';
 
 interface TodoListProps {
   addTodo: TodoItem[];
+  deleteTodo: (id: string) => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ addTodo }) => {
+const TodoList: React.FC<TodoListProps> = ({ addTodo, deleteTodo }) => {
   return (
     <div className={style.todoList}>
       {addTodo.map((todo) => (
-        <Todo key={todo.id} todo={todo.text} />
+        <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} />
       ))}
     </div>
   );
