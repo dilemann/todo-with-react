@@ -2,24 +2,25 @@ import React, { useState } from 'react';
 import style from './App.module.css';
 import TodoForm from './components/Todos/TodoForm';
 import TodoList from './components/Todos/TodoList';
+import { v4 as uuidv4 } from 'uuid';
 
-type TodoItem = {
-  id: number;
+export type TodoItem = {
+  id: string;
   text: string;
   isCompleted: boolean;
 };
 
 const App: React.FC = () => {
-  const [todo, setTodo] = useState<TodoItem[]>([]);
+  const [todos, setTodos] = useState<TodoItem[]>([]);
 
   const getNewTodo = (text: string) => {
     const newTodo: TodoItem = {
-      id: 1,
+      id: uuidv4(),
       text: text,
       isCompleted: false,
     };
 
-    setTodo([...todo, newTodo]);
+    setTodos([...todos, newTodo]);
     console.log(newTodo);
   };
 
@@ -27,7 +28,7 @@ const App: React.FC = () => {
     <div className={style.App}>
       <h1 className={style.title}> ToDo App</h1>
       <TodoForm getTodoHandler={getNewTodo} />
-      <TodoList />
+      <TodoList addTodo={todos} />
     </div>
   );
 };

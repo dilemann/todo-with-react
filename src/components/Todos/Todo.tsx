@@ -1,11 +1,16 @@
 import style from './Todo.module.css';
+import { TodoItem } from '../../App';
 
-function Todo() {
+interface TodoProps {
+  todo: string;
+}
+
+const Todo: React.FC<TodoProps> = ({ todo }) => {
   return (
     <div>
-      <div className={style.todo}>Todo</div>
+      <div className={style.todo}>{todo}</div>
     </div>
   );
-}
+};
 
 export default Todo;
