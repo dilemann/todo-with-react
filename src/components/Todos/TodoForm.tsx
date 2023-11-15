@@ -1,5 +1,6 @@
 import style from './TodoForm.module.css';
 import React, { useState } from 'react';
+import Button from '../UI/Button';
 
 interface TodoFormProps {
   getTodoHandler: (text: string) => void;
@@ -26,7 +27,9 @@ const TodoForm: React.FC<TodoFormProps> = ({ getTodoHandler }) => {
         className={style.input}
         onChange={onChangeHandler}
       />
-      <button>Submit</button>
+      <Button title="" disabled={false}>
+        Submit
+      </Button>
     </form>
   );
 };

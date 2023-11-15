@@ -21,7 +21,6 @@ const App: React.FC = () => {
     };
 
     setTodos([...todos, newTodo]);
-    console.log(newTodo);
   };
 
   return (

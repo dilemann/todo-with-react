@@ -1,10 +1,9 @@
-.todo {
+.container {
 
     width: 400px;
-    height: 35px;
-    padding: 5px;
-    border-radius: 7px;
-
+    padding: 5px 12px;
+    border-radius: 3px;
+    cursor: pointer;
     background-color: white;
     margin: 20px auto;
     color: black;
@@ -15,4 +14,64 @@
     align-items: center;
     border: 1px solid;
 
+}
+
+.completedTodo {
+    background-color: unset;
+    border-color: gray;
+    color: gray;
+
+}
+
+.listForm.completedTodo .icon,
+.listForm.completedTodo .deleteIcon,
+.listForm.completedTodo .acceptIcon {
+    color: gray;
+}
+
+
+.text {
+    color: black;
+    width: 100%;
+
+
+}
+
+.todoIcon {
+    font-size: 24px;
+    color: green;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.deleteIcon {
+
+    font-size: 24px;
+
+}
+
+.deleteIcon:hover {
+    color: red;
+
+    transform: scale(1.3);
+
+}
+
+
+
+.acceptIcon {
+    margin-left: 10px;
+
+}
+
+.acceptIcon:hover {
+    transform: scale(1.3);
+    color: green;
+}
+
+.deleteIcon,
+.acceptIcon {
+
+    color: lightgrey;
+    transition: transform 0.3s, color 0.3s;
 }
