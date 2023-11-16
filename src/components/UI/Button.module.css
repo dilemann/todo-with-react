@@ -1,25 +1,27 @@
 .button {
-
     background-color: blanchedalmond;
     font-size: 17px;
     padding: 4px 8px;
     display: inline;
-
     border: none;
     border-radius: 3px;
     cursor: pointer;
     margin-left: 15px;
-    transition: background-color 0.3s;
+    transition: background-color color 0.3s;
 
 
+}
+
+.button:disabled,
+.button:disabled *,
+button:disabled:hover,
+button:disabled.children {
+    background-color: gray;
+    color: rgb(150, 135, 135);
 }
 
 .button:hover {
 
     background-color: aquamarine;
 
-}
-
-.button:disabled {
-    color: gray;
 }
