@@ -19,3 +19,7 @@
     background-color: aquamarine;
 
 }
+
+.button:disabled {
+    color: gray;
+}

@@ -32,6 +32,14 @@ const App: React.FC = () => {
     );
   };
 
+  const deleteCompletedTodo = () => {
+    setTodos(
+      todos.filter((todo) => {
+        return !todo.isCompleted;
+      })
+    );
+  };
+
   const resetTodos = () => {
     setTodos([]);
   };
@@ -46,19 +54,32 @@ const App: React.FC = () => {
     );
   };
 
-  const countCompletedTodos = () => {};
+  const countCompletedTodos = todos.filter((todo) => todo.isCompleted).length;
 
   return (
     <div className={style.App}>
       <h1 className={style.title}> ToDo App</h1>
 
       <TodoForm getTodoHandler={getNewTodo} />
-      <TodoActions resetTodos={resetTodos} />
+      {!!todos.length && (
+        <TodoActions
+          resetTodos={resetTodos}
+          deleteCompleted={deleteCompletedTodo}
+          countCompletedTodos={countCompletedTodos}
+        />
+      )}
+
       <TodoList
         addTodo={todos}
         deleteTodo={deleteTodo}
         isCompleted={isCompletedTodo}
       />
+      {!!countCompletedTodos && (
+        <div className={style.explication}>
+          You have {countCompletedTodos} completed{' '}
+          {countCompletedTodos === 1 ? 'Todo' : 'Todos'}
+        </div>
+      )}
     </div>
   );
 };
